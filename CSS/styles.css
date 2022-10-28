@@ -1,0 +1,82 @@
+:root {
+  --color-white: #fff;
+  --color-green: forestgreen;
+  --color-black: black;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#container {
+  background-color: var(--color-white);
+  height: 100%;
+  padding-top: 60px;
+}
+.flex {
+  display: flex;
+}
+.content {
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+.team-container {
+  /* flex: 1; */
+  justify-content: center;
+  align-items: flex-start;
+}
+.user-input {
+  width: 250px;
+  height: 30px;
+  padding: 5px;
+}
+
+#add-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  background-color: var(--color-green);
+  border-radius: 5px;
+  color: var(--color-white);
+  padding: 10px;
+  border: none;
+  height: 30px;
+}
+.team-nav {
+  margin-top: 20px;
+}
+.team-input {
+  width: 50px;
+  padding-left: 10px;
+}
+#user-list {
+  flex-direction: column;
+  width: 300px;
+}
+.margin-left {
+  margin-left: 25px;
+}
+p {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding: 5px;
+  font-weight: bold;
+}
+.margin-top {
+  margin-top: 20px;
+}
+.team-list {
+  max-height: fit-content;
+  margin-inline: 10px;
+  border: 1px solid;
+  width: 200px;
+}
+h3 {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  padding: 5px;
+}
