@@ -24,7 +24,8 @@
   align-items: center;
 }
 .team-container {
-  /* flex: 1; */
+  flex: 1;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
 }
@@ -79,4 +80,5 @@ h3 {
   border-bottom-width: 2px;
   border-bottom-style: solid;
   padding: 5px;
+  text-align: center;
 }
