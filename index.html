@@ -10,32 +10,37 @@
     <link rel="stylesheet" href="./CSS/styles.css" />
   </head>
   <body>
+    <h1>TEAM GENERATE</h1>
     <div id="container" class="flex">
-      <div class="flex content">
-        <div class="flex">
-          <input
-            type="text"
-            id="userInput"
-            placeholder="Enter username"
-            name="username"
-            class="user-input"
-            value="kajal"
-          />
-          <button id="add-button">ADD</button>
+      <div class="flex flex-column flex1">
+        <div class="flex add-input">
+          <div class="flex user-nav">
+            <input
+              type="text"
+              id="userInput"
+              placeholder="Enter username"
+              name="username"
+              class="user-input"
+              value="kajal"
+            />
+            <button id="add-button">ADD</button>
+          </div>
+          <div class="addTeam-content flex">
+            <button id="minus">
+              <img src="./Image/remove.png" class="image" />
+            </button>
+            <p id="teamNumber"></p>
+            <button id="plus">
+              <img src="./Image/add.png" class="image" />
+            </button>
+          </div>
         </div>
-        <div id="user-list" class="flex margin-top"></div>
-        <div class="flex margin-top">
-          <input
-            type="number"
-            placeholder="No"
-            name="username"
-            class="team-input margin-left"
-            value=""
-          />
-          <button id="add-button" class="team-button">ADD TEAMS</button>
+        <div id="user-list" class="flex margin-top flex1"></div>
+        <div class="flex bottom-nav margin-top">
+          <button class="team-button">ASSISGN TEAMS</button>
+          <button class="reset-button">RESET</button>
         </div>
       </div>
-
       <div class="flex team-container"></div>
     </div>
     <script src="./script.js"></script>

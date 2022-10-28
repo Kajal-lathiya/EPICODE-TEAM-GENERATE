@@ -4,12 +4,15 @@ const AddTEAMButton = document.querySelector('.team-button');
 const teamInputNode = document.querySelector('.team-input')
 const UserListNode = document.getElementById('user-list');
 const teamContainer = document.querySelector('.team-container');
+const plusButton = document.getElementById('plus');
+const minusButton = document.getElementById('minus');
+const teamNumber = document.getElementById('teamNumber');
+const resetButton = document.querySelector('.reset-button')
 let userList = [];
-let teamCount = teamInputNode.value;
+let teamNo = 1;
 AddButton.addEventListener('click', () => {
     if (userInputNode.value !== "") {
         userList.push(userInputNode.value);
-        UserListNode.style.border = '1px solid black';
         let p = document.createElement('p');
         p.innerText = userInputNode.value;
         UserListNode.appendChild(p);
@@ -18,16 +21,28 @@ AddButton.addEventListener('click', () => {
     }
     userInputNode.value = "";
 })
-
+plusButton.addEventListener('click', () => {
+    teamNo++;
+    teamNumber.innerText = teamNo;
+})
+minusButton.addEventListener('click', () => {
+    if (teamNo > 1) {
+        teamNo--;
+    }
+    teamNumber.innerText = teamNo;
+})
+resetButton.addEventListener('click', () => {
+    userList = []
+})
 AddTEAMButton.addEventListener('click', () => {
     let newarray = (shuffleArray(userList));
-    let teamArray = splitTeams(newarray, teamInputNode.value);
+    let teamArray = splitTeams(newarray, teamNo);
     let div;
     teamArray.map((obj, i) => {
         div = document.createElement('div');
         div.className = 'team-list';
         let h3 = document.createElement('h3');
-        h3.innerText = `TEAM ${i + 1}`;
+        h3.innerText = `Team ${i + 1}`;
         div.appendChild(h3);
         teamContainer.appendChild(div)
         obj.map((d) => {
@@ -55,5 +70,6 @@ function splitTeams(names, teams_count) {
     return teams
 }
 window.onload = () => {
+    teamNumber.innerText = teamNo;
 
 }
